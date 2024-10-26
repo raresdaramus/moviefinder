@@ -1,6 +1,6 @@
-export const mutationLogin = async () => {
+export const fetchTvShowDetails = async (tvShowId: string) => {
   const res = await fetch(
-    "https://api.themoviedb.org/3/authentication/guest_session/new",
+    `https://api.themoviedb.org/3/tv/${tvShowId}?language=en-US`,
     {
       headers: {
         Authorization:
@@ -9,6 +9,5 @@ export const mutationLogin = async () => {
     }
   );
 
-  console.log(res.json);
   return res.json();
 };
